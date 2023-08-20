@@ -1,0 +1,263 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "montserrat";
+  color: #fff;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+#nav {
+  height: 145px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 45px;
+  padding: 0 150px;
+  /* background-color: blue; */
+  position: fixed;
+  /* z-index se ye hamesha(navbar) upar rhega */
+  z-index: 99;
+}
+#nav img {
+  height: 75px;
+}
+#nav h4 {
+  text-transform: uppercase;
+  font-weight: 500;
+}
+/* Cursor k sath small ball move krane ke liye */
+#cursor {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: #95c11e;
+  position: fixed;
+  z-index: 99;
+  transition: all linear 0.1s;
+}
+#cursorblur {
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  background-color: #96c11e5e;
+  position: fixed;
+  filter: blur(40px);
+  z-index: 9;
+  transition: all linear 0.3s;
+}
+
+video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: fixed;
+  z-index: -1;
+}
+#main {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.37);
+}
+#page1 {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  z-index: 10;
+}
+/* PSEUDO ELEMENTS */
+#page1 h1::before {
+  content: "EAT. DRINK. PLAY.";
+  position: absolute;
+  color: #000;
+  top: -3px;
+  left: -4px;
+  /* TEXT KI OUTLINE KE LIYE BORDER */
+  -webkit-text-stroke: 2px #95c11e;
+  z-index: -1;
+}
+#page1 p {
+  width: 55%;
+  font-size: 20px;
+  font-weight: 500;
+}
+#page1 h1 {
+  font-size: 100px;
+  font-weight: 900;
+  position: relative;
+}
+#page1 h2 {
+  font-size: 30px;
+  font-weight: 800;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+#page2 {
+  min-height: 100vh;
+  width: 100%;
+  z-index: 10;
+}
+
+#scroller {
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: relative;
+  z-index: 10;
+}
+#scroller::-webkit-scrollbar {
+  display: none;
+}
+#scrollerin {
+  display: inline-block;
+  white-space: nowrap;
+  animation-name: scroll;
+  animation-duration: 25s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+#scroller h4 {
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 110px;
+  font-weight: 900;
+  font-family: gilroy;
+  color: transparent;
+  -webkit-text-stroke: 2px white;
+  margin-right: 20px;
+  transition: all linear 0.5s;
+}
+#scroller h4:hover {
+  color: #95c11e;
+}
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+#about-us {
+  height: 40vh;
+  width: 100%;
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 50px;
+  position: relative;
+  z-index: 10;
+}
+#about-us img {
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+#about-us-in {
+  text-align: center;
+  width: 60%;
+}
+#about-us-in h3 {
+  font-size: 50px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+#about-us-in p {
+  line-height: 22px;
+  font-size: 22px;
+}
+
+#cards-containers {
+  /* background-color: red; */
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 70px;
+  position: relative;
+  z-index: 10;
+}
+.card {
+  height: 90%;
+  width: 26%;
+  /* background-color: violet; */
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  transition: all ease 0.6s;
+  margin-bottom: 400px;
+}
+#card1 {
+  background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-toptracer-1024x682.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+}
+#card2 {
+  background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/hero-4-1024x1024.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+}
+#card3 {
+  background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-lessons-1024x682.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+}
+
+.overlay{
+  height: 100%;
+  width: 100%;
+  background-color: #95c11e;
+  padding-top: 160px;
+  padding: 30px;
+  opacity: 0;
+  transition: all ease 0.6s;
+}
+.overlay h4{
+  color: #000;
+  font-size: 27px;
+  font-weight: 900;
+  text-transform: uppercase;
+  /* KOI BHI ELEMENT AGAR AGLI LINE ME AARHA HAI TO USKE NI AANE DEGA WHITE SPACE */
+  white-space: nowrap;
+  margin-bottom: 20px;
+}
+.overlay p{
+  color: black;
+  font-size: 20px;
+  line-height: 28px;
+}
+.card:hover .overlay{
+  opacity: 1;
+}
+.card:hover{
+  transform: rotate3d(-1,1,0,20deg);
+}
+#greendiv{
+  height: 30vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(to left bottom, #119f3a, #ace022);
+  margin-top: -130px;
+}
+#greendiv h4{
+  width: 50%;
+  font-size: 23px;
+  font-weight: 900;
+  text-align: center;
+  line-height: 50px;
+  text-transform: uppercase;
+  color: #000;
+  
+}
+#greendiv img{
+  height: 100%;
+  object-fit: cover;
+  width: 13%;
+}
