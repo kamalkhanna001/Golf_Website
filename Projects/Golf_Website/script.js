@@ -22,6 +22,20 @@ h4all.forEach(function (elem) {
   });
 });
 
+var footer = document.querySelectorAll("#footer h3,h4");
+footer.forEach(function (elem) {
+  elem.addEventListener("mouseenter", function () {
+    crsr.style.scale = 3;
+    crsr.style.border = "1px solid #fff";
+    crsr.style.backgroundColor = "transparent";
+  });
+  elem.addEventListener("mouseleave", function () {
+    crsr.style.scale = 1;
+    crsr.style.border = "0px solid #95C11E";
+    crsr.style.backgroundColor = "#95C11E";
+  });
+});
+
 // YE SCROLL TRIGGER HAI ISSE NAV BAR KI HEIGHT OR BG COLOR SCROLL KE WAQT CHANGE HO JAEGA 
 gsap.to("#nav", {
     backgroundColor: "#000",
@@ -73,3 +87,16 @@ gsap.to("#nav", {
       scrub: 4,
     },
   });
+
+  gsap.from("#page4 h1", {
+    y: 50,
+    scrollTrigger: {
+      trigger: "#page4 h1",
+      scroller: "body",
+      // markers:true,
+      start: "top 75%",
+      end: "top 70%",
+      scrub: 3,
+    },
+  });
+  
